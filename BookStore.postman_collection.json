@@ -1,0 +1,441 @@
+{
+	"info": {
+		"_postman_id": "079d5a45-4420-499f-859f-a076e5305c0f",
+		"name": "BookStore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Staff",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"FirstName\": \"librarian-assistant first\",\n    \"LastName\": \"librarian-assistant last\",\n    \"Gender\": \"Male\",\n    \"Role\": \"librarian-assistant\",\n    \"DateOfBirth\": \"2020-10-11\",\n    \"Salary\": 2500.5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/staff/newStaff",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"staff",
+						"newStaff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTJkNDFhY2RlMWQzZjlmYTZmYzE4NSIsImlhdCI6MTY0MjI2NTQ5OSwiZXhwIjoxNjQyMjY5MDk5fQ.aMBj8Gl-vlqt-bcToMKHCZg-yjlInjLZtarubQOy72w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"FirstName\": \"Customer2 first\",\n    \"LastName\": \"Customer2 last\",\n    \"PhoneNumber\": \"00000012\",\n    \"Email\": \"aaa19S0@mail.aub.edu\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/customers/newCustomer",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"customers",
+						"newCustomer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTJkNDFhY2RlMWQzZjlmYTZmYzE4NSIsImlhdCI6MTY0MjI2NTQ5OSwiZXhwIjoxNjQyMjY5MDk5fQ.aMBj8Gl-vlqt-bcToMKHCZg-yjlInjLZtarubQOy72w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/customers/removeCustomer/61e306bb0b66d9a5ba90adb3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"customers",
+						"removeCustomer",
+						"61e306bb0b66d9a5ba90adb3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Customers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTJkNDFhY2RlMWQzZjlmYTZmYzE4NSIsImlhdCI6MTY0MjI2NTQ5OSwiZXhwIjoxNjQyMjY5MDk5fQ.aMBj8Gl-vlqt-bcToMKHCZg-yjlInjLZtarubQOy72w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/customers/allCustomers/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"customers",
+						"allCustomers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Staff",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/staff/allStaff/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"staff",
+						"allStaff",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTJkNDFhY2RlMWQzZjlmYTZmYzE4NSIsImlhdCI6MTY0MjI2OTc0NSwiZXhwIjoxNjQyMjczMzQ1fQ.njOfMjM9SneqT1HOuEy_p1bwSOJ4EUYmXwil_aKZ9Ws",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ISBN\": \"0-4455-24223-12\",\n    \"BookName\": \"Title3\",\n    \"Author\": \"Abthor3\",\n    \"Genre\": \"zction\",\n    \"Date\": \"2020-09-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/books/newBook",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"books",
+						"newBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrow Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTJkNGM2Y2RlMWQzZjlmYTZmYzE4NyIsImlhdCI6MTY0MjI2Nzc1NywiZXhwIjoxNjQyMjcxMzU3fQ.m2nvuV0FcW3dyETUGerUrwqQHXO2uI0gn-1olIFYejs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"borrowerID\": \"61e2e8b37c13c7aacadc45d7\",\n    \"borrowerBookID\": \"09c902a0-7612-11ec-b27a-9f949478e4e1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/borrowedBooks/borrowBook",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"borrowedBooks",
+						"borrowBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/books/allBooks/Genre",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"books",
+						"allBooks",
+						"Genre"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Books",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTJkNGM2Y2RlMWQzZjlmYTZmYzE4NyIsImlhdCI6MTY0MjI2Nzc1NywiZXhwIjoxNjQyMjcxMzU3fQ.m2nvuV0FcW3dyETUGerUrwqQHXO2uI0gn-1olIFYejs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/books/searchBooks?ISBN=0-445-24223-",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"books",
+						"searchBooks"
+					],
+					"query": [
+						{
+							"key": "BookName",
+							"value": "title",
+							"disabled": true
+						},
+						{
+							"key": "ISBN",
+							"value": "0-445-24223-"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Staff Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"61e2d41acde1d3f9fa6fc185\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTJkNDFhY2RlMWQzZjlmYTZmYzE4NSIsImlhdCI6MTY0MjI2NTQ5OSwiZXhwIjoxNjQyMjY5MDk5fQ.aMBj8Gl-vlqt-bcToMKHCZg-yjlInjLZtarubQOy72w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/books/removeBook/d0e95470-7626-11ec-b3d0-15aae340e4c1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"books",
+						"removeBook",
+						"d0e95470-7626-11ec-b3d0-15aae340e4c1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Many Books",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTJkNDFhY2RlMWQzZjlmYTZmYzE4NSIsImlhdCI6MTY0MjI2NTQ5OSwiZXhwIjoxNjQyMjY5MDk5fQ.aMBj8Gl-vlqt-bcToMKHCZg-yjlInjLZtarubQOy72w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookIDs\": [\"78857d70-7623-11ec-ae9c-b16600addb47\", \"6efde2d0-7626-11ec-b3d0-15aae340e4c1\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/books/deleteBooks/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"books",
+						"deleteBooks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTJkNGM2Y2RlMWQzZjlmYTZmYzE4NyIsImlhdCI6MTY0MjI3MTA0OCwiZXhwIjoxNjQyMjc0NjQ4fQ.ljq-ilvRevVwG_cfFsiCZelPCxh5BmOt9R-C_Pd54aM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Status\": \"Available\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/books//updateBookStatus/591447f0-762d-11ec-8b64-21455e95b085",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"books",
+						"",
+						"updateBookStatus",
+						"591447f0-762d-11ec-8b64-21455e95b085"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "127.0.0.1:3000/api"
+		}
+	]
+}
